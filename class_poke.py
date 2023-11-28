@@ -12,5 +12,24 @@ class Pokemon:
         self.moves = [move1, move2, move3, move4]  # 技をリストで保持する
         self.terastal = terastal
 
+class Property:
+    def __init__(self, name):
+        self.name = name
+
+class EmergeProperty(Property(name)):
+    def effect(self):
+        if self.name == "Intimidate":
+            return "相手の攻撃を下げる"
+            
+class MoveProperty(Property(name)):
+    def effect(self):
+        if self.name == "Unseen_Fist":
+            return "守る貫通"     
+
+#property
+Intimidate = EmergeProperty("Intimidate") 
+Unseen_Fist = MoveProperty("Unseen_Fist")
+
+
 Landorus = Pokemon("Landorus","Intimidate" ,["Fly", "Ground"], 165, 197, 110, 112, 100, 157, Earthquake, U_Turn, Rock_Slide, Protect, "Fly")
 
